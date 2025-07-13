@@ -21,12 +21,12 @@ build/bin: | build
 build/%/: | build
 	mkdir -p build/$* 
 
-.PHONY: $(STRUCTURES) clean run
-
+.PHONY: $(STRUCTURES) 
 $(STRUCTURES): %: build/bin/%
 
 .PRECIOUS: build/%/main.o build/%/lib.o
 
+.PHONY: run
 ifdef STRUCT
 run: build/bin/$(STRUCT)
 	./build/bin/$(STRUCT)
@@ -37,9 +37,11 @@ run:
 	@echo "Example: make run STRUCT=linked_list"
 endif
 
+.PHONY: clean 
 clean:
 	rm -rvf build
 
+.PHONY: help
 help:
 	@echo "Arguments"
 	@echo "  <structure>     - Build specific structure ($(STRUCTURES))"
@@ -47,4 +49,3 @@ help:
 	@echo "  clean           - Remove build directory"
 	@echo "  help            - Show this help message"
 
-.PHONY: help
