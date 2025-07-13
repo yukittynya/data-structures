@@ -1,11 +1,5 @@
 git pull origin main 
-
-files=""
-for file in "src/*/"*; do
- files+="${file} "
-done
-
-git add ${files} Makefile push.sh README.md 
+git add .
 
 echo "Message:"
 read message
