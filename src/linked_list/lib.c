@@ -47,6 +47,27 @@ void prepend(LinkedList* list, int data) {
     list -> count++;
 }
 
+void delete(LinkedList* list, int data) {
+    if (list == NULL) {
+        return;
+    }
+
+    ListNode* current = list -> head;
+    ListNode* previous = current;
+
+    while (current -> next != NULL) {
+        if (current -> data == data) {
+            previous -> next = current -> next;
+            free(current);
+
+            return;
+        } 
+        
+        previous = current;
+        current = current -> next;
+    }
+}
+
 void print_list(LinkedList* list) {
     ListNode* root = list -> head;
 

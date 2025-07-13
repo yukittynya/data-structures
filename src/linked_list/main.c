@@ -8,5 +8,7 @@ int main(int argc, char *argv[]) {
     append(root, 4);
     append(root, 5);
 
+    delete(root, 2);
+
     print_list(root);
 }

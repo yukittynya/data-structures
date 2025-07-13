@@ -17,6 +17,8 @@ ListNode* new_node(int data);
 void append(LinkedList* list, int data);
 void prepend(LinkedList* list, int data);
 
+void delete(LinkedList* list, int data);
+
 void print_list(LinkedList* list);
 
 #endif // !LIB_H
