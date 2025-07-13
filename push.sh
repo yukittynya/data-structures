@@ -5,7 +5,7 @@ for file in "src/*/"*; do
  files+="${file} "
 done
 
-git add ${files} make.sh push.sh README.md 
+git add ${files} Makefile push.sh README.md 
 
 echo "Message:"
 read message
