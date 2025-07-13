@@ -27,9 +27,9 @@ $(STRUCTURES): %: build/bin/%
 .PRECIOUS: build/%/main.o build/%/lib.o
 
 .PHONY: run
-ifdef STRUCT
-run: build/bin/$(STRUCT)
-	./build/bin/$(STRUCT)
+ifdef struct 
+run: clean build/bin/$(struct)
+	./build/bin/$(struct)
 else
 run: 
 	@echo "Usage: make run STRUCT=<structure>"

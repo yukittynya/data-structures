@@ -48,24 +48,50 @@ void prepend(LinkedList* list, int data) {
 }
 
 void delete(LinkedList* list, int data) {
-    if (list == NULL) {
+    if (list -> head == NULL) {
         return;
     }
 
     ListNode* current = list -> head;
+
+    if (current -> data == data) {
+        list -> head = current -> next;
+        list -> count--;
+        free(current);
+    }
+
     ListNode* previous = current;
 
     while (current -> next != NULL) {
         if (current -> data == data) {
             previous -> next = current -> next;
-            free(current);
+            list -> count--;
 
+            free(current);
             return;
         } 
         
         previous = current;
         current = current -> next;
     }
+}
+
+bool exists(LinkedList* list, int data) {
+    if (list -> head == NULL) {
+        return false;
+    }
+
+    ListNode* current = list -> head;
+
+    while (current != NULL) {
+        if (current -> data == data) {
+            return true;
+        }
+
+        current = current -> next;
+    }
+
+    return false;
 }
 
 void print_list(LinkedList* list) {

@@ -1,6 +1,8 @@
 #ifndef LIB_H
 #define LIB_H
 
+#include <stdbool.h>
+
 typedef struct ListNode {
     struct ListNode* next;
     int data;
@@ -18,6 +20,8 @@ void append(LinkedList* list, int data);
 void prepend(LinkedList* list, int data);
 
 void delete(LinkedList* list, int data);
+
+bool exists(LinkedList* list, int data);
 
 void print_list(LinkedList* list);
 
