@@ -1,6 +1,9 @@
 #include "lib.h"
 
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <libgen.h>
 
 int main(int argc, char *argv[]) {
     LinkedList* root = create_list();
@@ -21,4 +24,5 @@ int main(int argc, char *argv[]) {
     } else {
         printf("%d does not exist\n", target);
     }
+
 }
