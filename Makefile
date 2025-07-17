@@ -1,6 +1,6 @@
 CFLAGS = -Werror -O3 -ffast-math -flto
 CC = clang 
-STRUCTURES = linked_list hashtable binary_tree stack queue
+STRUCTURES = linked_list hashtable bst stack queue
 
 build/bin/%: build/%/main.o build/%/lib.o | build/bin
 	$(CC) $(CFLAGS) $? -o $@
